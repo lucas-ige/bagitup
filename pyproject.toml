@@ -1,7 +1,7 @@
 [project]
 
 name = "bagitup"
-description = "A command-line tool to back up or sync git repositories."
+description = "A command-line tool to back up or sync git-based projects."
 version = "v1.0.dev0"
 
 authors = [{name="Lucas Bastien"}]
