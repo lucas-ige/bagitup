@@ -1,0 +1,27 @@
+# Workflow to run Ruff on Python code.
+#
+# Copyright (c) 2026 Institut des Géosciences de l'Environnement, Grenoble.
+
+name: Ruff
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '**.py'
+jobs:
+  Ruff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Prepare Ruff
+        uses: astral-sh/ruff-action@v3
+        with:
+          version: "latest"
+          args: "--version"
+      - name: Run Ruff (check)
+        run: ruff check --diff .
+      - name: Run Ruff (format)
+        run: ruff format --diff .
