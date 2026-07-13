@@ -17,6 +17,7 @@ keywords = ["git", "backup", "sync"]
 requires-python = ">=3.9"
 
 dependencies = [
+    "PyGithub",
 ]
 
 classifiers = [
