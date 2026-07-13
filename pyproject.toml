@@ -2,7 +2,7 @@
 
 name = "bagitup"
 description = "A command-line tool to back up or sync git repositories."
-version = "1.0.dev0"
+version = "v1.0.dev0"
 
 authors = [{name="Lucas Bastien"}]
 maintainers = [{name="Lucas Bastien"}]
