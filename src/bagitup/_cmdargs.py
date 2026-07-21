@@ -87,6 +87,39 @@ group.add_argument(
     nargs=2,
 )
 
+# What to backup
+
+group = parser.add_mutually_exclusive_group()
+group.add_argument(
+    "--all-branches",
+    help="Backup all branches from origin repository.",
+)
+group.add_argument(
+    "--branches",
+    help="Comma-separated list of branches to backup from origin repository.",
+)
+group = parser.add_mutually_exclusive_group()
+group.add_argument(
+    "--all-issues",
+    help="Backup all issues from origin repository.",
+)
+group.add_argument(
+    "--issues",
+    help="Comma-separated list of issues to backup from origin repository.",
+)
+group = parser.add_mutually_exclusive_group()
+group.add_argument(
+    "--all-pull-requests",
+    help="Backup all pull requests from origin repository.",
+)
+group.add_argument(
+    "--pull-requests",
+    help=(
+        "Comma-separated list of pull requests to backup from "
+        "origin repository."
+    ),
+)
+
 # Parse the actual command-line arguments
 
 args = parser.parse_args()
