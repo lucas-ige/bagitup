@@ -17,7 +17,8 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument(
     "--orig-type",
-    help="Type of repository of origin (local, Github, or GitLab).",
+    help="Type of repository of origin.",
+    choices=("local", "Github", "Gitlab"),
     required=True,
 )
 parser.add_argument(
@@ -53,7 +54,8 @@ group.add_argument(
 
 parser.add_argument(
     "--dest-type",
-    help="Type of destination repository (local, Github, or GitLab).",
+    help="Type of destination repository.",
+    choices=("local", "Github", "Gitlab"),
     required=True,
 )
 parser.add_argument(
