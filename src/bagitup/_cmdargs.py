@@ -16,33 +16,75 @@ parser = argparse.ArgumentParser(
 # Repository of origin
 
 parser.add_argument(
-    "--from-type",
+    "--orig-type",
     help="Type of repository of origin (local, Github, or GitLab).",
     required=True,
 )
 parser.add_argument(
-    "--from-location",
+    "--orig-location",
     help=(
-        "Repository of origin. Can be "
-        "/path/to/local/git/repo, or "
+        "Repository of origin. Can be /path/to/local/git/repo or "
         "username/reponame (for online-hosted repositories)."
     ),
-    required=False,
+    required=True,
 )
 group = parser.add_mutually_exclusive_group()
 group.add_argument(
-    "--from-auth-token",
-    help="Authentication token.",
+    "--orig-auth-token",
+    help="Authentication token for repository of origin.",
 )
 group.add_argument(
-    "--from-auth-token-envvar",
-    help="Environmental variable containing authentication token.",
+    "--orig-auth-token-envvar",
+    help=(
+        "Environmental variable containing authentication token for "
+        "repository of origin."
+    ),
 )
 group.add_argument(
-    "--from-auth-login",
-    help=("Login name and password (for security reasons, this "
-          "authentication method is not recommended)."),
+    "--orig-auth-login",
+    help=(
+        "Login name and password for repository of origin (for security "
+        "reasons, this authentication method is not recommended)."
+    ),
     nargs=2,
 )
+
+# Destination repository
+
+parser.add_argument(
+    "--dest-type",
+    help="Type of destination repository (local, Github, or GitLab).",
+    required=True,
+)
+parser.add_argument(
+    "--dest-location",
+    help=(
+        "Destination repository. Can be /path/to/local/git/repo or "
+        "username/reponame (for online-hosted repositories)."
+    ),
+    required=True,
+)
+group = parser.add_mutually_exclusive_group()
+group.add_argument(
+    "--dest-auth-token",
+    help="Authentication token for destination repository.",
+)
+group.add_argument(
+    "--dest-auth-token-envvar",
+    help=(
+        "Environmental variable containing authentication token for "
+        "destination repository."
+    ),
+)
+group.add_argument(
+    "--dest-auth-login",
+    help=(
+        "Login name and password for destination repository (for security "
+        "reasons, this authentication method is not recommended)."
+    ),
+    nargs=2,
+)
+
+# Parse the actual command-line arguments
 
 args = parser.parse_args()
