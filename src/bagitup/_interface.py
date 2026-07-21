@@ -19,7 +19,7 @@ class Repo(ABC):
         ----------
         args: Namespace
             User-provided command-line arguments.
-        which: "from" | "to"
+        which: "orig" | "dest"
             Whether we are connecting to the origin or the desination repo.
 
         """

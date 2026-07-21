@@ -7,5 +7,14 @@
 from ._cmdargs import args
 from ._interface import GithubRepo
 
-if args.from_type == "Github":
-    origin = GithubRepo(args, "from")
+if args.orig_type == "Github":
+    origin = GithubRepo(args, "orig")
+else:
+    msg = f"Origin repository type: {args.orig_type}"
+    raise NotImplementedError(msg)
+
+if args.from_type == "local":
+    pass
+else:
+    msg = f"Destination repository type: {args.dest_type}"
+    raise NotImplementedError(msg)
