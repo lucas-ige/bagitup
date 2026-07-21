@@ -86,6 +86,11 @@ group.add_argument(
     ),
     nargs=2,
 )
+parser.add_argument(
+    "--dest-dir",
+    help="Directory containing bagitup data in destination repository.",
+    default="bagitup",
+)
 
 # What to backup
 
