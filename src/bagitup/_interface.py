@@ -5,8 +5,11 @@
 # License: BSD 3-clause "new" or "revised" license (BSD-3-Clause).
 
 from abc import ABC, abstractmethod
+
 import github
-from . _exceptions import InternalError
+
+from ._exceptions import InternalError
+
 
 class Repo(ABC):
     """A git repository."""

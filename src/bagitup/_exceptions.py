@@ -12,4 +12,3 @@ class InternalError(Exception):
     is triggered by a safety check.
 
     """
-    pass
