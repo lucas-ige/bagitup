@@ -4,6 +4,7 @@
 #
 # License: BSD 3-clause "new" or "revised" license (BSD-3-Clause).
 
+
 class InternalError(Exception):
     """Signal an internal exception.
 
