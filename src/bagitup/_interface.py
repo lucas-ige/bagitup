@@ -23,7 +23,6 @@ class Repo(ABC):
             Whether we are connecting to the origin or the desination repo.
 
         """
-        pass
 
 class GithubRepo(Repo):
     """A Github repository."""
